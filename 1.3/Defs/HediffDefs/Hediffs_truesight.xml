@@ -4,7 +4,7 @@
  <HediffDef>
 	<defName>TS_TrueSight</defName>
 	<label>Blindsight</label>
-	<description>This person has successfully completed the ritual of Blindsight and is now unlocking their true vision.</description>
+	<description>This person has successfully completed the ritual of Blindsight and is now unlocking their true vision. Unlock psylink levels to improve.</description>
     <hediffClass>TrueSight.Hediff_TrueSight</hediffClass>
     <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
 	<isBad>false</isBad>
@@ -12,72 +12,74 @@
 		<li>
 			<minSeverity>0</minSeverity>
 			<label>sightless</label>
-			<overrideTooltip>This person has successfully completed the ritual of Blindsight and is now on their way to unlocking their true vision. Gain psylink levels to improve.</overrideTooltip>
+			<overrideTooltip>This person has successfully completed the ritual of Blindsight and is now on their way to unlocking their true vision. Unlock psylink levels to improve.</overrideTooltip>
 		</li>
 		<li>
 			<minSeverity>0.1</minSeverity>
 			<label>level 1</label>
 			<statOffsets>
-				<AnimalGatherSpeed>0.1</AnimalGatherSpeed>
+				<AnimalGatherSpeed>0.125</AnimalGatherSpeed>
 				<AnimalGatherYield>0.05</AnimalGatherYield>
-				<ButcheryFleshEfficiency>0.05</ButcheryFleshEfficiency>
-				<ButcheryFleshSpeed>0.05</ButcheryFleshSpeed>
-				<ButcheryMechanoidEfficiency>0.05</ButcheryMechanoidEfficiency>
-				<ButcheryMechanoidSpeed>0.05</ButcheryMechanoidSpeed>
+				<ButcheryFleshEfficiency>0.1</ButcheryFleshEfficiency>
+				<ButcheryFleshSpeed>0.1</ButcheryFleshSpeed>
+				<ButcheryMechanoidEfficiency>0.1</ButcheryMechanoidEfficiency>
+				<ButcheryMechanoidSpeed>0.1</ButcheryMechanoidSpeed>
 				<ConstructSuccessChance>0.05</ConstructSuccessChance>
 				<ConstructionSpeed>0.05</ConstructionSpeed>
 				<CookSpeed>1.0</CookSpeed>
-				<DeepDrillingSpeed>0.1</DeepDrillingSpeed>
-				<DrugSynthesisSpeed>0.1</DrugSynthesisSpeed>
+				<DeepDrillingSpeed>0.125</DeepDrillingSpeed>
+				<DrugSynthesisSpeed>0.075</DrugSynthesisSpeed>
 				<FixBrokenDownBuildingSuccessChance>0.05</FixBrokenDownBuildingSuccessChance>
-				<GeneralLaborSpeed>0.1</GeneralLaborSpeed>
-				<MedicalOperationSpeed>0.1</MedicalOperationSpeed>
-				<MedicalSurgerySuccessChance>0.2</MedicalSurgerySuccessChance>
-				<MedicalTendQuality>0.2</MedicalTendQuality>
-				<MedicalTendSpeed>0.1</MedicalTendSpeed>
-				<MeleeDodgeChance>0.2</MeleeDodgeChance>
-				<MeleeHitChance>2.0</MeleeHitChance>
-				<MiningSpeed>0.1</MiningSpeed>
+				<ForagedNutritionPerDay>0.2</ForagedNutritionPerDay>				
+				<GeneralLaborSpeed>0.125</GeneralLaborSpeed>
+				<MedicalOperationSpeed>0.175</MedicalOperationSpeed>
+				<MedicalSurgerySuccessChance>0.25</MedicalSurgerySuccessChance>
+				<MedicalTendQuality>0.175/MedicalTendQuality>
+				<MedicalTendSpeed>0.2</MedicalTendSpeed>
+				<MeleeDodgeChance>0.3</MeleeDodgeChance>
+				<MeleeHitChance>3.0</MeleeHitChance>
+				<MiningSpeed>0.125</MiningSpeed>
 				<MiningYield>0.05</MiningYield>
 				<PlantHarvestYield>0.05</PlantHarvestYield>
-				<PlantWorkSpeed>0.05</PlantWorkSpeed>
-				<ResearchSpeed>0.1</ResearchSpeed>
-				<ShootingAccuracyPawn>2.0</ShootingAccuracyPawn>
+				<PlantWorkSpeed>0.075</PlantWorkSpeed>
+				<ResearchSpeed>0.05</ResearchSpeed>
+				<ShootingAccuracyPawn>3.0</ShootingAccuracyPawn>
+				<SmeltingSpeed>0.075</SmeltingSpeed>
+				<SmoothingSpeed>0.075</SmoothingSpeed>					
 			</statOffsets>
 		</li>
 		<li>
 			<minSeverity>0.2</minSeverity>
 			<label>level 2</label>
 			<statOffsets>
-				<AnimalGatherSpeed>0.2</AnimalGatherSpeed>
+				<AnimalGatherSpeed>0.25</AnimalGatherSpeed>
 				<AnimalGatherYield>0.1</AnimalGatherYield>
-				<ButcheryFleshEfficiency>0.1</ButcheryFleshEfficiency>
-				<ButcheryFleshSpeed>0.1</ButcheryFleshSpeed>
-				<ButcheryMechanoidEfficiency>0.1</ButcheryMechanoidEfficiency>
-				<ButcheryMechanoidSpeed>0.1</ButcheryMechanoidSpeed>
+				<ButcheryFleshEfficiency>0.2</ButcheryFleshEfficiency>
+				<ButcheryFleshSpeed>0.2</ButcheryFleshSpeed>
+				<ButcheryMechanoidEfficiency>0.2</ButcheryMechanoidEfficiency>
+				<ButcheryMechanoidSpeed>0.2</ButcheryMechanoidSpeed>
 				<ConstructSuccessChance>0.1</ConstructSuccessChance>
 				<ConstructionSpeed>0.1</ConstructionSpeed>
 				<CookSpeed>2.0</CookSpeed>
-				<DeepDrillingSpeed>0.2</DeepDrillingSpeed>
-				<DrugCookingSpeed>0.2</DrugCookingSpeed>
-				<DrugSynthesisSpeed>0.2</DrugSynthesisSpeed>
+				<DeepDrillingSpeed>0.25</DeepDrillingSpeed>
+				<DrugSynthesisSpeed>0.15</DrugSynthesisSpeed>
 				<FixBrokenDownBuildingSuccessChance>0.1</FixBrokenDownBuildingSuccessChance>
-				<ForagedNutritionPerDay>0.2</ForagedNutritionPerDay>
-				<GeneralLaborSpeed>0.2</GeneralLaborSpeed>
-				<MedicalOperationSpeed>0.2</MedicalOperationSpeed>
-				<MedicalSurgerySuccessChance>0.4</MedicalSurgerySuccessChance>
-				<MedicalTendQuality>0.4</MedicalTendQuality>
-				<MedicalTendSpeed>0.2</MedicalTendSpeed>
-				<MeleeDodgeChance>1.0</MeleeDodgeChance>
+				<ForagedNutritionPerDay>0.4</ForagedNutritionPerDay>				
+				<GeneralLaborSpeed>0.25</GeneralLaborSpeed>
+				<MedicalOperationSpeed>0.35</MedicalOperationSpeed>
+				<MedicalSurgerySuccessChance>0.5</MedicalSurgerySuccessChance>
+				<MedicalTendQuality>0.35/MedicalTendQuality>
+				<MedicalTendSpeed>0.4</MedicalTendSpeed>
+				<MeleeDodgeChance>0.6</MeleeDodgeChance>
 				<MeleeHitChance>6.0</MeleeHitChance>
-				<MiningSpeed>0.2</MiningSpeed>
+				<MiningSpeed>0.25</MiningSpeed>
 				<MiningYield>0.1</MiningYield>
 				<PlantHarvestYield>0.1</PlantHarvestYield>
-				<PlantWorkSpeed>0.1</PlantWorkSpeed>
-				<ResearchSpeed>0.25</ResearchSpeed>
-				<ShootingAccuracyPawn>4.0</ShootingAccuracyPawn>
-				<SmeltingSpeed>0.1</SmeltingSpeed>
-				<SmoothingSpeed>0.1</SmoothingSpeed>
+				<PlantWorkSpeed>0.25</PlantWorkSpeed>
+				<ResearchSpeed>0.1</ResearchSpeed>
+				<ShootingAccuracyPawn>6.0</ShootingAccuracyPawn>
+				<SmeltingSpeed>0.15</SmeltingSpeed>
+				<SmoothingSpeed>0.15</SmoothingSpeed>					
 			</statOffsets>
 			<capMods>
 				<li>
@@ -90,35 +92,34 @@
 			<minSeverity>0.3</minSeverity>
 			<label>level 3</label>
 			<statOffsets>
-				<AnimalGatherSpeed>0.2</AnimalGatherSpeed>
-				<AnimalGatherYield>0.2</AnimalGatherYield>
-				<ButcheryFleshEfficiency>0.2</ButcheryFleshEfficiency>
-				<ButcheryFleshSpeed>0.2</ButcheryFleshSpeed>
-				<ButcheryMechanoidEfficiency>0.2</ButcheryMechanoidEfficiency>
-				<ButcheryMechanoidSpeed>0.2</ButcheryMechanoidSpeed>
-				<ConstructSuccessChance>0.2</ConstructSuccessChance>
-				<ConstructionSpeed>0.2</ConstructionSpeed>
-				<CookSpeed>4.0</CookSpeed>
-				<DeepDrillingSpeed>0.3</DeepDrillingSpeed>
-				<DrugCookingSpeed>0.2</DrugCookingSpeed>
-				<DrugSynthesisSpeed>0.4</DrugSynthesisSpeed>
-				<FixBrokenDownBuildingSuccessChance>0.1</FixBrokenDownBuildingSuccessChance>
-				<ForagedNutritionPerDay>0.8</ForagedNutritionPerDay>
-				<GeneralLaborSpeed>0.3</GeneralLaborSpeed>
-				<MedicalOperationSpeed>0.3</MedicalOperationSpeed>
-				<MedicalSurgerySuccessChance>0.6</MedicalSurgerySuccessChance>
-				<MedicalTendQuality>0.5</MedicalTendQuality>
-				<MedicalTendSpeed>0.3</MedicalTendSpeed>
-				<MeleeDodgeChance>3.0</MeleeDodgeChance>
-				<MeleeHitChance>12.0</MeleeHitChance>
-				<MiningSpeed>0.3</MiningSpeed>
-				<MiningYield>0.2</MiningYield>
-				<PlantHarvestYield>0.2</PlantHarvestYield>
-				<PlantWorkSpeed>0.2</PlantWorkSpeed>
-				<ResearchSpeed>0.3</ResearchSpeed>
-				<ShootingAccuracyPawn>10.0</ShootingAccuracyPawn>
-				<SmeltingSpeed>0.2</SmeltingSpeed>
-				<SmoothingSpeed>0.2</SmoothingSpeed>
+				<AnimalGatherSpeed>0.375</AnimalGatherSpeed>
+				<AnimalGatherYield>0.15</AnimalGatherYield>
+				<ButcheryFleshEfficiency>0.3</ButcheryFleshEfficiency>
+				<ButcheryFleshSpeed>0.3</ButcheryFleshSpeed>
+				<ButcheryMechanoidEfficiency>0.3</ButcheryMechanoidEfficiency>
+				<ButcheryMechanoidSpeed>0.3</ButcheryMechanoidSpeed>
+				<ConstructSuccessChance>0.15</ConstructSuccessChance>
+				<ConstructionSpeed>0.15</ConstructionSpeed>
+				<CookSpeed>3.0</CookSpeed>
+				<DeepDrillingSpeed>0.375</DeepDrillingSpeed>
+				<DrugSynthesisSpeed>0.225</DrugSynthesisSpeed>
+				<FixBrokenDownBuildingSuccessChance>0.15</FixBrokenDownBuildingSuccessChance>
+				<ForagedNutritionPerDay>0.6</ForagedNutritionPerDay>				
+				<GeneralLaborSpeed>0.375</GeneralLaborSpeed>
+				<MedicalOperationSpeed>0.175</MedicalOperationSpeed>
+				<MedicalSurgerySuccessChance>0.25</MedicalSurgerySuccessChance>
+				<MedicalTendQuality>0.525/MedicalTendQuality>
+				<MedicalTendSpeed>0.6</MedicalTendSpeed>
+				<MeleeDodgeChance>0.9</MeleeDodgeChance>
+				<MeleeHitChance>9.0</MeleeHitChance>
+				<MiningSpeed>0.375</MiningSpeed>
+				<MiningYield>0.15</MiningYield>
+				<PlantHarvestYield>0.15</PlantHarvestYield>
+				<PlantWorkSpeed>0.225</PlantWorkSpeed>
+				<ResearchSpeed>0.15</ResearchSpeed>
+				<ShootingAccuracyPawn>9.0</ShootingAccuracyPawn>
+				<SmeltingSpeed>0.225</SmeltingSpeed>
+				<SmoothingSpeed>0.225</SmoothingSpeed>	
 			</statOffsets>
 			<capMods>
 				<li>
@@ -132,27 +133,27 @@
 			<label>level 4</label>
 			<statOffsets>
 				<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
-				<AnimalGatherSpeed>0.4</AnimalGatherSpeed>
+				<AnimalGatherSpeed>0.5</AnimalGatherSpeed>
 				<AnimalGatherYield>0.2</AnimalGatherYield>
-				<ButcheryFleshEfficiency>0.3</ButcheryFleshEfficiency>
+				<ButcheryFleshEfficiency>0.4</ButcheryFleshEfficiency>
 				<ButcheryFleshSpeed>0.4</ButcheryFleshSpeed>
-				<ButcheryMechanoidEfficiency>0.3</ButcheryMechanoidEfficiency>
+				<ButcheryMechanoidEfficiency>0.4</ButcheryMechanoidEfficiency>
 				<ButcheryMechanoidSpeed>0.4</ButcheryMechanoidSpeed>
 				<ConstructSuccessChance>0.2</ConstructSuccessChance>
 				<ConstructionSpeed>0.2</ConstructionSpeed>
-				<CookSpeed>6.0</CookSpeed>
+				<CookSpeed>4.0</CookSpeed>
 				<DeepDrillingSpeed>0.5</DeepDrillingSpeed>
 				<DrugCookingSpeed>0.3</DrugCookingSpeed>
 				<DrugSynthesisSpeed>0.6</DrugSynthesisSpeed>
 				<FixBrokenDownBuildingSuccessChance>0.2</FixBrokenDownBuildingSuccessChance>
-				<ForagedNutritionPerDay>1.5</ForagedNutritionPerDay>
+				<ForagedNutritionPerDay>0.9</ForagedNutritionPerDay>
 				<GeneralLaborSpeed>0.5</GeneralLaborSpeed>
 				<MedicalOperationSpeed>0.7</MedicalOperationSpeed>
 				<MedicalSurgerySuccessChance>1.0</MedicalSurgerySuccessChance>
-				<MedicalTendQuality>1.1</MedicalTendQuality>
+				<MedicalTendQuality>0.7</MedicalTendQuality>
 				<MedicalTendSpeed>0.8</MedicalTendSpeed>
-				<MeleeDodgeChance>5.0</MeleeDodgeChance>
-				<MeleeHitChance>15.0</MeleeHitChance>
+				<MeleeDodgeChance>1.2</MeleeDodgeChance>
+				<MeleeHitChance>12.0</MeleeHitChance>
 				<MiningSpeed>0.5</MiningSpeed>
 				<MiningYield>0.2</MiningYield>
 				<PlantHarvestYield>0.2</PlantHarvestYield>
@@ -182,25 +183,25 @@
 				<ButcheryMechanoidSpeed>0.4</ButcheryMechanoidSpeed>
 				<ConstructSuccessChance>0.2</ConstructSuccessChance>
 				<ConstructionSpeed>0.2</ConstructionSpeed>
-				<CookSpeed>6.0</CookSpeed>
+				<CookSpeed>5.0</CookSpeed>
 				<DeepDrillingSpeed>0.5</DeepDrillingSpeed>
 				<DrugCookingSpeed>0.3</DrugCookingSpeed>
 				<DrugSynthesisSpeed>0.6</DrugSynthesisSpeed>
 				<FixBrokenDownBuildingSuccessChance>0.2</FixBrokenDownBuildingSuccessChance>
-				<ForagedNutritionPerDay>1.5</ForagedNutritionPerDay>
+				<ForagedNutritionPerDay>1.2</ForagedNutritionPerDay>
 				<GeneralLaborSpeed>0.5</GeneralLaborSpeed>
 				<MedicalOperationSpeed>0.7</MedicalOperationSpeed>
 				<MedicalSurgerySuccessChance>1.0</MedicalSurgerySuccessChance>
-				<MedicalTendQuality>1.1</MedicalTendQuality>
+				<MedicalTendQuality>0.875</MedicalTendQuality>
 				<MedicalTendSpeed>0.8</MedicalTendSpeed>
-				<MeleeDodgeChance>1.1</MeleeDodgeChance>
-				<MeleeHitChance>20.0</MeleeHitChance>
+				<MeleeDodgeChance>1.2</MeleeDodgeChance>
+				<MeleeHitChance>15.0</MeleeHitChance>
 				<MiningSpeed>0.5</MiningSpeed>
 				<MiningYield>0.2</MiningYield>
 				<PlantHarvestYield>0.2</PlantHarvestYield>
 				<PlantWorkSpeed>0.3</PlantWorkSpeed>
 				<ResearchSpeed>0.55</ResearchSpeed>
-				<ShootingAccuracyPawn>20.0</ShootingAccuracyPawn>
+				<ShootingAccuracyPawn>15.0</ShootingAccuracyPawn>
 				<SmeltingSpeed>0.3</SmeltingSpeed>
 				<SmoothingSpeed>0.3</SmoothingSpeed>
 			</statOffsets>
@@ -217,34 +218,35 @@
 			<statOffsets>
 				<WorkSpeedGlobal>0.2</WorkSpeedGlobal>
 				<AnimalGatherSpeed>0.55</AnimalGatherSpeed>
-				<AnimalGatherYield>0.3</AnimalGatherYield>
-				<ButcheryFleshEfficiency>0.5</ButcheryFleshEfficiency>
+				<AnimalGatherYield>0.2</AnimalGatherYield>
+				<ButcheryFleshEfficiency>0.4</ButcheryFleshEfficiency>
 				<ButcheryFleshSpeed>0.4</ButcheryFleshSpeed>
-				<ButcheryMechanoidEfficiency>0.5</ButcheryMechanoidEfficiency>
+				<ButcheryMechanoidEfficiency>0.4</ButcheryMechanoidEfficiency>
 				<ButcheryMechanoidSpeed>0.4</ButcheryMechanoidSpeed>
-				<ConstructSuccessChance>0.3</ConstructSuccessChance>
+				<ConstructSuccessChance>0.2</ConstructSuccessChance>
 				<ConstructionSpeed>0.2</ConstructionSpeed>
 				<CookSpeed>6.0</CookSpeed>
 				<DeepDrillingSpeed>0.5</DeepDrillingSpeed>
 				<DrugCookingSpeed>0.3</DrugCookingSpeed>
 				<DrugSynthesisSpeed>0.6</DrugSynthesisSpeed>
-				<FixBrokenDownBuildingSuccessChance>0.25</FixBrokenDownBuildingSuccessChance>
-				<ForagedNutritionPerDay>2.0</ForagedNutritionPerDay>
+				<FixBrokenDownBuildingSuccessChance>0.2</FixBrokenDownBuildingSuccessChance>
+				<ForagedNutritionPerDay>1.2</ForagedNutritionPerDay>
 				<GeneralLaborSpeed>0.5</GeneralLaborSpeed>
 				<MedicalOperationSpeed>0.7</MedicalOperationSpeed>
-				<MedicalSurgerySuccessChance>1.2</MedicalSurgerySuccessChance>
-				<MedicalTendQuality>1.2</MedicalTendQuality>
+				<MedicalSurgerySuccessChance>1.0</MedicalSurgerySuccessChance>
+				<MedicalTendQuality>0.98</MedicalTendQuality>
 				<MedicalTendSpeed>0.8</MedicalTendSpeed>
-				<MeleeDodgeChance>10.0</MeleeDodgeChance>
-				<MeleeHitChance>23.0</MeleeHitChance>
+				<MeleeDodgeChance>1.5</MeleeDodgeChance>
+				<MeleeHitChance>20.0</MeleeHitChance>
 				<MiningSpeed>0.5</MiningSpeed>
 				<MiningYield>0.2</MiningYield>
 				<PlantHarvestYield>0.2</PlantHarvestYield>
 				<PlantWorkSpeed>0.3</PlantWorkSpeed>
 				<ResearchSpeed>0.55</ResearchSpeed>
-				<ShootingAccuracyPawn>22.0</ShootingAccuracyPawn>
+				<ShootingAccuracyPawn>24.0</ShootingAccuracyPawn>
 				<SmeltingSpeed>0.3</SmeltingSpeed>
 				<SmoothingSpeed>0.3</SmoothingSpeed>
+			</statOffsets>
 			</statOffsets>
 			<capMods>
 				<li>
