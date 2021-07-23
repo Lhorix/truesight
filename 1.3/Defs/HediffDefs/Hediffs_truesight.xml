@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <HediffDef>
-	<defName>truesight0</defName>
-	<label>Blindsight (Sightless)</label>
-	<description>This person has successfully completed the ritual of Blindsight and is now on their way to unlocking their true vision.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-	<isBad>false</isBad>
-  </HediffDef>
  <HediffDef>
-	<defName>truesight1</defName>
-	<label>Blindsight (Level 1)</label>
+	<defName>TS_TrueSight</defName>
+	<label>Blindsight</label>
 	<description>This person has successfully completed the ritual of Blindsight and is now unlocking their true vision.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>TrueSight.Hediff_TrueSight</hediffClass>
     <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
 	<isBad>false</isBad>
-	
 	<stages>	
 		<li>
+			<minSeverity>0</minSeverity>
+			<label>sightless</label>
+			<overrideTooltip>This person has successfully completed the ritual of Blindsight and is now on their way to unlocking their true vision.</overrideTooltip>
+		</li>
+		<li>
+			<minSeverity>0.1</minSeverity>
+			<label>level 1</label>
 			<statOffsets>
 				<AnimalGatherSpeed>0.1</AnimalGatherSpeed>
 				<AnimalGatherYield>0.05</AnimalGatherYield>
@@ -47,18 +45,9 @@
 				<ShootingAccuracyPawn>2.0</ShootingAccuracyPawn>
 			</statOffsets>
 		</li>
-	</stages>
- </HediffDef> 
- <HediffDef>
-	<defName>truesight2</defName>
-	<label>Blindsight (Level 2)</label>
-	<description>This person has successfully completed the ritual of Blindsight and is now unlocking their true vision.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-	<isBad>false</isBad>
-	
-	<stages>	
 		<li>
+			<minSeverity>0.2</minSeverity>
+			<label>level 2</label>
 			<statOffsets>
 				<AnimalGatherSpeed>0.2</AnimalGatherSpeed>
 				<AnimalGatherYield>0.1</AnimalGatherYield>
@@ -97,18 +86,9 @@
 				</li>
 			</capMods>	
 		</li>
-	</stages>
- </HediffDef> 
- <HediffDef>
-	<defName>truesight3</defName>
-	<label>Blindsight (Level 3)</label>
-	<description>This person has successfully completed the ritual of Blindsight and is now unlocking their true vision.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-	<isBad>false</isBad>
-	
-	<stages>	
 		<li>
+			<minSeverity>0.3</minSeverity>
+			<label>level 3</label>
 			<statOffsets>
 				<AnimalGatherSpeed>0.2</AnimalGatherSpeed>
 				<AnimalGatherYield>0.2</AnimalGatherYield>
@@ -147,18 +127,9 @@
 				</li>
 			</capMods>	
 		</li>
-	</stages>
- </HediffDef> 
- <HediffDef>
-	<defName>truesight4</defName>
-	<label>Blindsight (Level 4)</label>
-	<description>This person has successfully completed the ritual of Blindsight and is now unlocking their true vision.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-	<isBad>false</isBad>
-	
-	<stages>	
 		<li>
+			<minSeverity>0.4</minSeverity>
+			<label>level 4</label>
 			<statOffsets>
 				<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
 				<AnimalGatherSpeed>0.4</AnimalGatherSpeed>
@@ -198,18 +169,9 @@
 				</li>
 			</capMods>	
 		</li>
-	</stages>
- </HediffDef>
-  <HediffDef>
-	<defName>truesight5</defName>
-	<label>Blindsight (Level 5)</label>
-	<description>This person has successfully completed the ritual of Blindsight and is now unlocking their true vision.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-	<isBad>false</isBad>
-	
-	<stages>	
 		<li>
+			<minSeverity>0.5</minSeverity>
+			<label>level 5</label>
 			<statOffsets>
 				<WorkSpeedGlobal>0.15</WorkSpeedGlobal>
 				<AnimalGatherSpeed>0.55</AnimalGatherSpeed>
@@ -249,18 +211,9 @@
 				</li>
 			</capMods>	
 		</li>
-	</stages>
- </HediffDef> 
- <HediffDef>
-	<defName>truesight6</defName>
-	<label>Blindsight (Level 6)</label>
-	<description>This person has successfully completed the ritual of Blindsight and has unlocked their true vision.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-	<isBad>false</isBad>
-	
-	<stages>	
 		<li>
+			<minSeverity>0.6</minSeverity>
+			<label>level 6</label>
 			<statOffsets>
 				<WorkSpeedGlobal>0.2</WorkSpeedGlobal>
 				<AnimalGatherSpeed>0.55</AnimalGatherSpeed>
@@ -302,4 +255,5 @@
 		</li>
 	</stages>
  </HediffDef> 
+
 </Defs>
