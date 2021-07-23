@@ -12,7 +12,7 @@
 		<li>
 			<minSeverity>0</minSeverity>
 			<label>sightless</label>
-			<overrideTooltip>This person has successfully completed the ritual of Blindsight and is now on their way to unlocking their true vision.</overrideTooltip>
+			<overrideTooltip>This person has successfully completed the ritual of Blindsight and is now on their way to unlocking their true vision. Gain psylink levels to improve.</overrideTooltip>
 		</li>
 		<li>
 			<minSeverity>0.1</minSeverity>
