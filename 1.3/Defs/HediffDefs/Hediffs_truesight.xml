@@ -4,7 +4,7 @@
  <HediffDef>
 	<defName>TS_TrueSight</defName>
 	<label>Blindsight</label>
-	<description>This person has successfully completed the ritual of Blindsight and is now unlocking their true vision. Unlock psylink levels to improve.</description>
+	<description>This person has successfully completed the ritual of Blindsight and is now unlocking their true vision. Unlock psylink levels to improve its power.</description>
     <hediffClass>TrueSight.Hediff_TrueSight</hediffClass>
     <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
 	<isBad>false</isBad>
@@ -12,7 +12,7 @@
 		<li>
 			<minSeverity>0</minSeverity>
 			<label>sightless</label>
-			<overrideTooltip>This person has successfully completed the ritual of Blindsight and is now on their way to unlocking their true vision. Unlock psylink levels to improve.</overrideTooltip>
+			<overrideTooltip>This person has successfully completed the ritual of Blindsight and is now on their way to unlocking their true vision. Unlock psylink levels to improve its power.</overrideTooltip>
 		</li>
 		<li>
 			<minSeverity>0.1</minSeverity>
