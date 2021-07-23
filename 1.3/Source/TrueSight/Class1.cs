@@ -21,6 +21,12 @@ namespace TrueSight
         {
             new Harmony("TrueSight.Mod").PatchAll();
         }
+
+        public static bool ShouldHaveTrueSightHediff(this Pawn pawn)
+        {
+            return !pawn.Dead && pawn.Ideo.IdeoApprovesOfBlindness() && pawn.health.hediffSet.GetFirstHediffOfDef(TS_DefOf.TS_TrueSight) is null
+                && !pawn.health.hediffSet.GetNotMissingParts().Any((BodyPartRecord x) => x.def == BodyPartDefOf.Eye) && !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight);
+        }
     }
 
     [HarmonyPatch(typeof(JobDriver_Blind), "Blind")]
@@ -28,10 +34,36 @@ namespace TrueSight
     {
         public static void Postfix(Pawn pawn, Pawn doer)
         {
-            if (!pawn.Dead)
+            if (pawn.ShouldHaveTrueSightHediff())
             {
                 var hediff = HediffMaker.MakeHediff(TS_DefOf.TS_TrueSight, pawn);
                 pawn.health.AddHediff(hediff);
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Pawn), "SpawnSetup")]
+    public static class Pawn_SpawnSetup_Patch
+    {
+        public static void Postfix(Pawn __instance)
+        {
+            if (__instance.ShouldHaveTrueSightHediff())
+            {
+                var hediff = HediffMaker.MakeHediff(TS_DefOf.TS_TrueSight, __instance);
+                __instance.health.AddHediff(hediff);
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Pawn_HealthTracker), "CheckForStateChange")]
+    public static class Pawn_CheckForStateChange_Patch
+    {
+        public static void Postfix(Pawn ___pawn)
+        {
+            if (___pawn.ShouldHaveTrueSightHediff())
+            {
+                var hediff = HediffMaker.MakeHediff(TS_DefOf.TS_TrueSight, ___pawn);
+                ___pawn.health.AddHediff(hediff);
             }
         }
     }
