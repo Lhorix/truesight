@@ -80,6 +80,10 @@ namespace TrueSight
                 var hediff = HediffMaker.MakeHediff(TS_DefOf.TS_TrueSight, __instance.pawn);
                 __instance.pawn.health.AddHediff(hediff);
             }
+            else if (__instance.pawn.health.hediffSet.GetFirstHediffOfDef(TS_DefOf.TS_TrueSight) is Hediff_TrueSight hediff_TrueSight)
+            {
+                hediff_TrueSight.TryChangeSeverity();
+            }
         }
     }
 
