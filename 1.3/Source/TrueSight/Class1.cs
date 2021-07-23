@@ -69,8 +69,27 @@ namespace TrueSight
             }
         }
     }
+
+    [HarmonyPatch(typeof(Hediff_Psylink), "ChangeLevel", new Type[] {typeof(int), typeof(bool) })]
+    public static class Hediff_Psylink_ChangeLevel_Patch
+    {
+        public static void Postfix(Hediff_Psylink __instance)
+        {
+            if (__instance.pawn.ShouldHaveTrueSightHediff())
+            {
+                var hediff = HediffMaker.MakeHediff(TS_DefOf.TS_TrueSight, __instance.pawn);
+                __instance.pawn.health.AddHediff(hediff);
+            }
+        }
+    }
+
     public class Hediff_TrueSight : HediffWithComps
     {
+        public override void PostAdd(DamageInfo? dinfo)
+        {
+            base.PostAdd(dinfo);
+            TryChangeSeverity();
+        }
         public override bool ShouldRemove => pawn.health.hediffSet.GetNotMissingParts().Any((BodyPartRecord x) => x.def == BodyPartDefOf.Eye)
             || pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight) || !pawn.Ideo.IdeoApprovesOfBlindness();
         public override void Tick()
@@ -78,13 +97,17 @@ namespace TrueSight
             base.Tick();
             if (Find.TickManager.TicksGame % 60 == 0)
             {
-                if (ShouldChangeSeverity(out float newSeverity))
-                {
-                    this.severityInt = newSeverity;
-                }
+                TryChangeSeverity();
             }
         }
 
+        public void TryChangeSeverity()
+        {
+            if (ShouldChangeSeverity(out float newSeverity))
+            {
+                this.severityInt = newSeverity;
+            }
+        }
 
         private bool ShouldChangeSeverity(out float newSeverity)
         {
