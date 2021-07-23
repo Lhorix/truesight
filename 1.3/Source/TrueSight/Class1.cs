@@ -24,8 +24,10 @@ namespace TrueSight
 
         public static bool ShouldHaveTrueSightHediff(this Pawn pawn)
         {
-            return !pawn.Dead && pawn.Ideo.IdeoApprovesOfBlindness() && pawn.health.hediffSet.GetFirstHediffOfDef(TS_DefOf.TS_TrueSight) is null
-                && !pawn.health.hediffSet.GetNotMissingParts().Any((BodyPartRecord x) => x.def == BodyPartDefOf.Eye) && !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight);
+            return !pawn.Dead && pawn.Ideo != null && pawn.Ideo.IdeoApprovesOfBlindness() 
+                && pawn.health?.hediffSet != null && pawn.health.hediffSet.GetFirstHediffOfDef(TS_DefOf.TS_TrueSight) is null
+                 && !pawn.health.hediffSet.GetNotMissingParts().Any((BodyPartRecord x) => x.def == BodyPartDefOf.Eye) 
+                 && !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight);
         }
     }
 
