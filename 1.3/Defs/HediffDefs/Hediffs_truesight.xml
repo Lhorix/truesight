@@ -253,7 +253,6 @@
 				<SmoothingSpeed>0.3</SmoothingSpeed>
 				<HackingSpeed>1.1</HackingSpeed>				
 			</statOffsets>
-			</statOffsets>
 			<capMods>
 				<li>
 					<capacity>Hearing</capacity>
