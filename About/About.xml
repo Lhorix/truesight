@@ -1,22 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Blightsight - TrueSight</name>
-	<author>Linz</author>
-	<supportedVersions>
-		<li>1.3</li>
-	</supportedVersions>
-	<packageId>linz.truesight</packageId>
-	<modDependencies>
-		<li>
-			<packageId>brrainz.harmony</packageId>
-			<displayName>Harmony</displayName>
-			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld</downloadUrl>			
-		</li>	
-	</modDependencies>
-	<loadAfter>
-		<li>brrainz.harmony</li>
-		<li>Ludeon.RimWorld</li>
-		<li>Ludeon.RimWorld.Royalty</li>
-		<li>Ludeon.Rimworld.Ideology</li>
-	</loadAfter>
-	<description>Now your pawns are able to gain true sight! Any pawns who follow the Blindsight precept who are also blind will gain a new abilities according to their psylink level. Higher psylink level gives better buffs to the pawns up to level 6. Blindfolds do not give your pawns any new sight buffs and blind pawns with no psylink levels will not receive any buffs. The buffs gained by the new Blindsight buff will offset the negatives of your pawns being blind. Psylink level 1 does not give much, but it is better than no sight at all. At the highest, the buffs are comparable to having Archotech eyes. This means that pawns with psylinks will be able to shoot weapons, construct things, and research at speeds. Pawn hearing is also increased as they adapt to their new sight. Be careful however, the Blindsight buff will disappear if your pawn has their vision restored or if they convert to a new ideology that does not follow Blindsight precepts. Requires Harmony.</description>	
+  <name>Blindsight - Truesight</name>
+  <author>Linz</author>
+  <supportedVersions>
+    <li>1.3</li>
+  </supportedVersions>
+  <packageId>linz.truesight_copy_copy</packageId>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.Rimworld.Ideology</li>
+  </loadAfter>
+  <description>Now your pawns are able to gain true sight! Any pawns who follow the Blindsight precept who are also blind will gain a new abilities according to their psylink level. Higher psylink level gives better buffs to the pawns up to level 6. Blindfolds do not give your pawns any new sight buffs and blind pawns with no psylink levels will not receive any buffs. The buffs gained by the new Blindsight buff will offset the negatives of your pawns being blind. Psylink level 1 does not give much, but it is better than no sight at all. At the highest, the buffs are comparable to having Archotech eyes. This means that pawns with psylinks will be able to shoot weapons, construct things, and research at speeds. Pawn hearing is also increased as they adapt to their new sight. Be careful however, the Blindsight buff will disappear if your pawn has their vision restored or if they convert to a new ideology that does not follow Blindsight precepts. Requires Harmony.</description>
 </ModMetaData>
