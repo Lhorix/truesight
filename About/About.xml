@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Blindsight - Truesight</name>
-  <author>Linz</author>
+  <author>Lhoxris</author>
   <supportedVersions>
     <li>1.3</li>
+    <li>1.4</li>
   </supportedVersions>
-  <packageId>linz.truesight_copy_copy</packageId>
+  <packageId>Lhoxris.Truesight</packageId>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
