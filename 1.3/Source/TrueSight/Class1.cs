@@ -26,8 +26,7 @@ namespace TrueSight
         {
             return !pawn.Dead && pawn.Ideo != null && pawn.Ideo.IdeoApprovesOfBlindness() 
                 && pawn.health?.hediffSet != null && pawn.health.hediffSet.GetFirstHediffOfDef(TS_DefOf.TS_TrueSight) is null
-                 && !pawn.health.hediffSet.GetNotMissingParts().Any((BodyPartRecord x) => x.def == BodyPartDefOf.Eye) 
-                 && !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight);
+                && !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight);
         }
     }
 
@@ -80,10 +79,6 @@ namespace TrueSight
                 var hediff = HediffMaker.MakeHediff(TS_DefOf.TS_TrueSight, __instance.pawn);
                 __instance.pawn.health.AddHediff(hediff);
             }
-            else if (__instance.pawn.health.hediffSet.GetFirstHediffOfDef(TS_DefOf.TS_TrueSight) is Hediff_TrueSight hediff_TrueSight)
-            {
-                hediff_TrueSight.TryChangeSeverity();
-            }
         }
     }
 
@@ -94,8 +89,7 @@ namespace TrueSight
             base.PostAdd(dinfo);
             TryChangeSeverity();
         }
-        public override bool ShouldRemove => pawn.health.hediffSet.GetNotMissingParts().Any((BodyPartRecord x) => x.def == BodyPartDefOf.Eye)
-            || pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight) || !pawn.Ideo.IdeoApprovesOfBlindness();
+        public override bool ShouldRemove => pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight) || !pawn.Ideo.IdeoApprovesOfBlindness();
         public override void Tick()
         {
             base.Tick();
