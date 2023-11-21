@@ -82,6 +82,37 @@ namespace TrueSight
         }
     }
 
+    // Handle ideological reform
+    [HarmonyPatch(typeof(Ideo), "RecachePrecepts")]
+    public static class Ideo_RecachePrecepts_Patch
+    {
+        public static void Postfix(Ideo __instance)
+        {
+            if (!__instance.IdeoApprovesOfBlindness()) return; // Don't bother checking unless blindness is approved of
+
+            foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive)
+            {
+                if (p.ShouldHaveTrueSightHediff())
+                {
+                    var hediff = HediffMaker.MakeHediff(TS_DefOf.TS_TrueSight, p);
+                    p.health.AddHediff(hediff);
+                }
+            }
+        }
+    }
+
+    // Handle conversion of already blind pawns
+    [HarmonyPatch(typeof(Pawn_IdeoTracker), "SetIdeo")]
+    public static class Ideo_Pawn_IdeoTracker_Patch
+    {
+        public static void Postfix(Pawn ___pawn) {
+            if (___pawn.ShouldHaveTrueSightHediff()) {
+                var hediff = HediffMaker.MakeHediff(TS_DefOf.TS_TrueSight, ___pawn);
+                ___pawn.health.AddHediff(hediff);
+            }
+        }
+    }
+
     public class Hediff_TrueSight : HediffWithComps
     {
         public override void PostAdd(DamageInfo? dinfo)
