@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Verse;
 
@@ -29,9 +30,14 @@ namespace TrueSight
 		}
 	}
 
-	[HarmonyPatch(typeof(StatWorker), "GetValueUnfinalized")]
-	public static class StatWorker_GetValueUnfinalized_Patch
+	[HarmonyPatch]
+	public static class StatWorker_Patches
 	{
+		public static IEnumerable<MethodBase> TargetMethods()
+		{
+			yield return AccessTools.Method(typeof(StatWorker), nameof(StatWorker.GetValueUnfinalized));
+			yield return AccessTools.Method(typeof(StatWorker), nameof(StatWorker.GetExplanationUnfinalized));
+		}
 		public static void Prefix(StatWorker __instance, StatRequest req, out (PawnCapacityFactor originalFactor, float originalWeight) __state)
 		{
 			__state = default;
@@ -40,7 +46,7 @@ namespace TrueSight
 				Hediff_TrueSight trueSightHediff = pawn.health.hediffSet.GetFirstHediffOfDef(TS_DefOf.TS_TrueSight) as Hediff_TrueSight;
 				if (trueSightHediff != null)
 				{
-					float blindsightLevel = trueSightHediff.Severity;
+					float blindsightLevel = trueSightHediff.Severity * 10f;
 					float sightCapacityWeight = 1f;
 
 					if (blindsightLevel >= 4f) sightCapacityWeight = 0f;
