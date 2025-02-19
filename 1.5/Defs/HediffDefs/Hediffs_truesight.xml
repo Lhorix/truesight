@@ -48,7 +48,6 @@
 					<SmeltingSpeed>0.1071</SmeltingSpeed>
 					<SmoothingSpeed>0.1071</SmoothingSpeed>
 					<HackingSpeed>0.25</HackingSpeed>
-					<ReadingSpeed>2.2</ReadingSpeed>
 					<EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">0.25</EntityStudyRate>
 				</statOffsets>
 			</li>
@@ -86,7 +85,6 @@
 					<SmeltingSpeed>0.2142</SmeltingSpeed>
 					<SmoothingSpeed>0.2142</SmoothingSpeed>
 					<HackingSpeed>0.5</HackingSpeed>
-					<ReadingSpeed>5.6</ReadingSpeed>
 					<EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">0.5</EntityStudyRate>
 				</statOffsets>
 				<capMods>
@@ -130,7 +128,6 @@
 					<SmeltingSpeed>0.3214</SmeltingSpeed>
 					<SmoothingSpeed>0.3214</SmoothingSpeed>
 					<HackingSpeed>0.75</HackingSpeed>
-					<ReadingSpeed>8.4</ReadingSpeed>
 					<EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">0.75</EntityStudyRate>
 				</statOffsets>
 				<capMods>
@@ -174,7 +171,6 @@
 					<SmeltingSpeed>0.4286</SmeltingSpeed>
 					<SmoothingSpeed>0.4286</SmoothingSpeed>
 					<HackingSpeed>1.0</HackingSpeed>
-					<ReadingSpeed>11.2</ReadingSpeed>
 					<EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">1</EntityStudyRate>
 				</statOffsets>
 				<capMods>
@@ -218,7 +214,6 @@
 					<SmeltingSpeed>0.4286</SmeltingSpeed>
 					<SmoothingSpeed>0.4286</SmoothingSpeed>
 					<HackingSpeed>1.0</HackingSpeed>
-					<ReadingSpeed>11.2</ReadingSpeed>
 					<EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">1.1</EntityStudyRate>
 				</statOffsets>
 				<capMods>
@@ -262,7 +257,6 @@
 					<SmeltingSpeed>0.4286</SmeltingSpeed>
 					<SmoothingSpeed>0.4286</SmoothingSpeed>
 					<HackingSpeed>1.0</HackingSpeed>
-					<ReadingSpeed>11.2</ReadingSpeed>
 					<EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">1.1</EntityStudyRate>
 				</statOffsets>
 				<capMods>

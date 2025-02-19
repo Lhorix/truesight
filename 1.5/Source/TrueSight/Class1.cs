@@ -3,7 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Reflection;
 using System.Threading.Tasks;
 using Verse;
 
@@ -30,18 +30,54 @@ namespace TrueSight
 		}
 	}
 
-	[HarmonyPatch(typeof(StatWorker), "GetValueUnfinalized")]
-	public static class StatWorker_GetValueUnfinalized_Patch
+	[HarmonyPatch]
+	public static class StatWorker_Patches
 	{
-		public static void Prefix(ref float __result, StatWorker __instance, StatRequest req)
+		public static IEnumerable<MethodBase> TargetMethods()
 		{
+			yield return AccessTools.Method(typeof(StatWorker), nameof(StatWorker.GetValueUnfinalized));
+			yield return AccessTools.Method(typeof(StatWorker), nameof(StatWorker.GetExplanationUnfinalized));
 		}
-		public static void Postfix(ref float __result, StatWorker __instance, StatRequest req)
+		public static void Prefix(StatWorker __instance, StatRequest req, out (PawnCapacityFactor originalFactor, float originalWeight) __state)
 		{
+			__state = default;
+			if (__instance.stat == StatDefOf.ReadingSpeed && req.Thing is Pawn pawn)
+			{
+				Hediff_TrueSight trueSightHediff = pawn.health.hediffSet.GetFirstHediffOfDef(TS_DefOf.TS_TrueSight) as Hediff_TrueSight;
+				if (trueSightHediff != null)
+				{
+					float blindsightLevel = trueSightHediff.Severity * 10f;
+					float sightCapacityWeight = 1f;
+
+					if (blindsightLevel >= 4f) sightCapacityWeight = 0f;
+					else if (blindsightLevel >= 3f) sightCapacityWeight = 0.25f;
+					else if (blindsightLevel >= 2f) sightCapacityWeight = 0.5f;
+					else if (blindsightLevel >= 1f) sightCapacityWeight = 0.75f;
+
+					for (int i = 0; i < __instance.stat.capacityFactors.Count; i++)
+					{
+						if (__instance.stat.capacityFactors[i].capacity == PawnCapacityDefOf.Sight)
+						{
+							float originalWeight = __instance.stat.capacityFactors[i].weight;
+							PawnCapacityFactor originalCapacityFactor = __instance.stat.capacityFactors[i];
+							__state = (originalCapacityFactor, originalWeight);
+							__instance.stat.capacityFactors[i].weight = sightCapacityWeight;
+							break;
+						}
+					}
+				}
+			}
+		}
+		public static void Postfix((PawnCapacityFactor originalFactor, float originalWeight) __state)
+		{
+			if (__state != default)
+			{
+				__state.originalFactor.weight = __state.originalWeight;
+			}
 		}
 	}
 
-		[HarmonyPatch(typeof(JobDriver_Blind), "Blind")]
+	[HarmonyPatch(typeof(JobDriver_Blind), "Blind")]
 	public static class JobDriver_Blind_Patch
 	{
 		public static void Postfix(Pawn pawn, Pawn doer)
@@ -80,7 +116,7 @@ namespace TrueSight
 		}
 	}
 
-	[HarmonyPatch(typeof(Hediff_Psylink), "ChangeLevel", new Type[] {typeof(int), typeof(bool) })]
+	[HarmonyPatch(typeof(Hediff_Psylink), "ChangeLevel", new Type[] { typeof(int), typeof(bool) })]
 	public static class Hediff_Psylink_ChangeLevel_Patch
 	{
 		public static void Postfix(Hediff_Psylink __instance)
@@ -116,8 +152,10 @@ namespace TrueSight
 	[HarmonyPatch(typeof(Pawn_IdeoTracker), "SetIdeo")]
 	public static class Ideo_Pawn_IdeoTracker_Patch
 	{
-		public static void Postfix(Pawn ___pawn) {
-			if (___pawn.ShouldHaveTrueSightHediff()) {
+		public static void Postfix(Pawn ___pawn)
+		{
+			if (___pawn.ShouldHaveTrueSightHediff())
+			{
 				var hediff = HediffMaker.MakeHediff(TS_DefOf.TS_TrueSight, ___pawn);
 				___pawn.health.AddHediff(hediff);
 			}
@@ -164,7 +202,6 @@ namespace TrueSight
 			}
 			newSeverity = -1f;
 			return false;
-
 		}
 	}
 }
